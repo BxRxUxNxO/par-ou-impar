@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Verificador de Paridade</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5dc;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+
+  .container {
+    text-align: center;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+    width: 320px;
+  }
+
+  h1 {
+    color: #8b4513;
+    margin-bottom: 15px;
+  }
+
+  input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+
+  button {
+    background-color: #8b4513;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+
+  button:hover {
+    background-color: #654321;
+  }
+
+  #resultado {
+    margin-top: 15px;
+    font-weight: bold;
+    color: #8b4513;
+  }
+</style>
+<script>
+function verificarParidade() {
+    var valor = parseInt(document.getElementById("inputValor").value);
+    var resultado = document.getElementById("resultado");
+
+    if (isNaN(valor)) {
+        resultado.innerHTML = "Por favor, insira um valor inteiro válido.";
+    } else {
+        if (valor % 2 === 0) {
+            resultado.innerHTML = "O número " + valor + " é par.";
+        } else {
+            resultado.innerHTML = "O número " + valor + " é ímpar.";
+        }
+    }
+}
+</script>
+</head>
+<body>
+<div class="container">
+  <h1>Verificador de Número</h1>
+  <input type="text" id="inputValor" placeholder="Digite um número inteiro">
+  <button onclick="verificarParidade()">Verificar</button>
+  <p id="resultado"></p>
+</div>
+</body>
+</html>
